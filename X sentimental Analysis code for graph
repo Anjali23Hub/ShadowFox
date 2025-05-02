@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+
+sentiment_counts= output_df['Sentiment'].value_counts().reindex(['Positive', 'Negative'], fill_value=0)
+sentiment_counts.plot(kind='bar', color=['green', 'red'])
+plt.xlabel('Sentiment')
+plt.ylabel('Count')
+plt.title('Sentiment Analysis')
+plt.show()
+
+#conclusion
+#The sentiment analysis using VADER shows a predominantly [Positive/Negative] sentiment trend based on the distribution
+#of sentiment scores. Neutral comments were identified but not included in the visual representation. The analysis helps
+#in understanding how people generally feel about the content in the dataset.
