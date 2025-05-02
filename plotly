@@ -1,0 +1,57 @@
+# This code creates an interactive line plot using Plotly Express. A DataFrame 'df' is created with columns 'x' and 'y' 
+# representing the data to be plotted. The 'px.line()' function generates a line plot using 'x' as the x-axis and 'y' as 
+# the y-axis, with a specified title. Finally, 'fig.show()' displays the interactive plot
+
+import plotly.express as px
+import pandas as pd
+
+df = pd.DataFrame({'x': [0, 1, 2, 3], 'y': [10, 15, 13, 17]})
+fig = px.line(df, x='x', y='y', title='Plotly Line Plot')
+fig.show()
+
+
+# This code creates an interactive scatter plot using Plotly Express. A DataFrame 'df' is defined with 'x' and 'y' columns 
+# representing the data points to be plotted on the x-axis and y-axis respectively. The 'px.scatter()' function generates 
+# the scatter plot with a given title, and 'fig.show()' displays the interactive visualization.
+
+import plotly.express as px
+import pandas as pd
+
+df = pd.DataFrame({'x': [1, 2, 3, 4], 'y': [10, 20, 25, 30]})
+fig = px.scatter(df, x='x', y='y', title='Plotly Scatter Plot')
+fig.show()
+
+
+# This code generates an interactive bar chart using Plotly Express. A DataFrame 'df' is created with 'Category' as the x-axis 
+# and 'Value' as the y-axis. The 'px.bar()' function creates the bar chart with a specified title, and 'fig.show()' renders the chart.
+
+import plotly.express as px
+import pandas as pd
+
+df = pd.DataFrame({'Category': ['A', 'B', 'C'], 'Value': [10, 20, 15]})
+fig = px.bar(df, x='Category', y='Value', title='Plotly Bar Chart')
+fig.show()
+
+
+# This code creates an interactive histogram using Plotly Express. The 'data' list contains numerical values to be 
+# visualized, and 'px.histogram()' is used to generate the histogram with 5 bins (controlled by 'nbins'). A title is 
+# added to the plot, and 'fig.show()' displays the interactive chart.
+
+import plotly.express as px
+import pandas as pd
+
+data = [1, 1, 2, 3, 3, 3, 4, 5, 6]
+fig = px.histogram(data, nbins=5, title='Plotly Histogram')
+fig.show()
+
+
+# This code generates an interactive pie chart using Plotly Express. The 'names' list specifies the labels for each slice, 
+# and the 'values' list provides the corresponding proportions. The 'px.pie()' function creates the pie chart with a title, 
+# and 'fig.show()' displays the chart in an interactive format.
+
+import plotly.express as px
+import pandas as pd
+
+fig=px.pie(names=['A', 'B', 'C'], values=[30, 45, 25], title='Plotly Pie Chart')
+
+fig.show()
