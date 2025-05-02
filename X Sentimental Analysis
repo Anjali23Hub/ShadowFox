@@ -6,7 +6,7 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import pandas as pd
 
-df = pd.read_csv('Tdata.csv')
+df = pd.read_csv('sentiment_data.csv')
 
 sid_obj = SentimentIntensityAnalyzer()
 
