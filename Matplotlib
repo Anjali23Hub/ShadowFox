@@ -1,0 +1,72 @@
+# This code creates a line plot where the 'x' list represents the x-axis values and the 'y' list represents 
+# the y-axis values. The plot includes circular markers ('o') for each data point. It also adds labels for 
+# both axes ('X-axis' and 'Y-axis'), a title to the plot, and enables a grid for better visualization before displaying the plot.
+
+import matplotlib.pyplot as plt
+
+x = [0, 1, 2, 3]
+y = [10, 15, 13, 17]
+
+plt.plot(x, y, marker='o')
+plt.title('Matplotlib Line Plot') 
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.grid(True)
+plt.show()
+
+
+# This code creates a scatter plot with the 'x' list representing the x-axis values and the 'y' list representing 
+# the y-axis values. The points are plotted in red color, and the plot includes labeled axes ('X' and 'Y') 
+# and a title. The plot is then displayed using plt.show().
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+plt.scatter(x, y, color='red')
+plt.title('Matplotlib Scatter Plot')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
+
+
+# This code creates a bar chart using the 'categories' list for the x-axis and the 'values' list for the y-axis. 
+# It plots bars representing the values for each category and adds a title to the chart before displaying it with plt.show().
+
+import matplotlib.pyplot as plt
+
+categories = ['A', 'B', 'C']
+values = [10, 20, 15]
+
+plt.bar(categories, values)
+plt.title('Matplotlib Bar Chart')
+plt.show()
+
+
+
+# This code creates a histogram from the 'data' list, which contains values that are grouped into 5 bins 
+# (specified by the 'bins' argument). The histogram displays the distribution of data values, and a title 
+# is added to the plot before it's displayed using plt.show().
+
+import matplotlib.pyplot as plt
+
+data = [1, 1, 2, 3, 3, 3, 4, 5, 6]
+
+plt.hist(data, bins=5)
+plt.title('Matplotlib Histogram')
+plt.show()
+
+
+# The following code creates a pie chart where the 'sizes' list represents the values for each segment, 
+# and the 'labels' list provides labels for each segment. The 'autopct' argument formats the percentage 
+# displayed on the pie chart. After creating the chart, the title is added, and the chart is displayed using plt.show().
+
+import matplotlib.pyplot as plt
+
+labels = ['A', 'B', 'C']
+sizes = [30, 45, 25]
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.title('Matplotlib Pie Chart')
+plt.show()
