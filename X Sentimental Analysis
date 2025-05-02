@@ -1,0 +1,30 @@
+# This code performs sentiment analysis on text data read from a CSV file named 'Tdata.csv'. It uses the VADER sentiment 
+# analyzer to compute sentiment scores for each sentence in the first column of the CSV. Based on the compound score, 
+# it classifies each sentence as Positive, Negative, or Neutral, and stores the results in a new DataFrame. Finally, 
+# the sentiment labels are saved to a new CSV file named 'sentiment_output.csv'.
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import pandas as pd
+
+df = pd.read_csv('Tdata.csv')
+
+sid_obj = SentimentIntensityAnalyzer()
+
+sentiment_results = []
+
+for sentence in df.iloc[:, 0]:
+    sentiment_dict = sid_obj.polarity_scores(sentence)
+    compound = sentiment_dict['compound']
+
+    if compound >= 0.05:
+        sentiment = "Positive"
+    elif compound <= -0.05:
+        sentiment = "Negative"
+    else:
+        sentiment = "Neutral"
+
+    sentiment_results.append(sentiment)
+
+output_df = pd.DataFrame(sentiment_results, columns=['Sentiment'])
+
+output_df.to_csv('sentiment_output.csv', index=False)
